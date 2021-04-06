@@ -38,6 +38,7 @@ func doOperation(firstValue: String, secondValue: String, operation: String) -> 
         result = fvalue! - svalue!;
     case "X":
         result = fvalue! * svalue!;
+    //    case "%": break
     default:
         result = svalue!;
     }

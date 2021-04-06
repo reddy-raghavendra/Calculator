@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct HistoryView: View {
-    @State var history: [String] = ["sai","jeeva","bfjsb"]
+    @State var history: [String] = []
 
 var body: some View {
     List(history,id:\.self){his in

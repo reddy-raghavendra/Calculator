@@ -16,7 +16,9 @@ struct ButtonsView: View {
 @State private var operation: String = "";
 
 var body: some View {
+//     NavigationView{
     VStack(spacing: 5){
+       
                         HStack(spacing: 30){
                             Button(action: {
                                 self.value = "0";
@@ -38,12 +40,20 @@ var body: some View {
                                     .background(Color.gray)
                                     .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                             }
-                            Button(action: {}) {
-                            Text("%")
-                                    .frame(width: 50.0, height: 50.0)
-                        .background(Color.gray)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            }
+//                            NavigationView{
+                                NavigationLink(destination: HistoryView()){
+                                    Text("History");
+//                                        Button(action: {}) {
+//                                        Text("History")
+//                                                .frame(width: 50.0, height: 50.0)
+//                                    .background(Color.gray)
+//                                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//                                        }
+                                }
+//                            }
+//                            .frame(width: 50.0, height: 50.0)
+
+                            
                             Button(action: {
                                 self.operation = "/"
                                 self.firstValue = self.value
@@ -211,5 +221,12 @@ var body: some View {
 
                         
                     }
+ }
 }
+//}
+
+struct ButtonsView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }

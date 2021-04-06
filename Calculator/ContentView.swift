@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var secondValue: String = "";
     
     var body: some View {
+        NavigationView{
         VStack(spacing: 4){
                 TextField("", text: $value)
                     .frame(height: 100.0)
@@ -23,6 +24,7 @@ struct ContentView: View {
                         /*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Value@*/dimension[.top]/*@END_MENU_TOKEN@*/
                 }
             ButtonsView(value: $value)
+        }
         }
     }
 }
