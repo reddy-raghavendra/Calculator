@@ -15,16 +15,22 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-        VStack(spacing: 4){
+            VStack(spacing: 4){
                 TextField("", text: $value)
-                    .frame(height: 100.0)
-                    .background(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).foregroundColor(Color.white)
-                    .alignmentGuide(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Guide@*/.leading/*@END_MENU_TOKEN@*/) { dimension in
-                        /*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Value@*/dimension[.top]/*@END_MENU_TOKEN@*/
-                }
-            ButtonsView(value: $value)
-        }
+                    .frame(height: 140.0)
+                    .background(Color.black)
+                    .font(Font.system(size:60))
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.trailing)
+
+                ButtonsView(value: $value)
+                Spacer(minLength: 5);
+                Spacer();
+                Spacer();
+                Spacer();
+                
+            }
+            .navigationBarTitle("Calculator")
         }
     }
 }
@@ -32,6 +38,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView()
+        }
     }
 }

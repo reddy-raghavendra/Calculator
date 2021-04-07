@@ -7,9 +7,13 @@
 //
 
 import Foundation
-
+var isNew: Bool = false;
 func appendValue(newValue: String, oldValue: String) -> String{
     if oldValue == "0" {
+        return newValue
+    }
+    if isNew == true{
+        isNew = false;
         return newValue
     }
     return oldValue + newValue
@@ -42,7 +46,7 @@ func doOperation(firstValue: String, secondValue: String, operation: String) -> 
     default:
         result = svalue!;
     }
-    
+    isNew = true;
     
     if res == ""{
         res = String(result);
